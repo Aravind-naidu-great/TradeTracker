@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeTracker | Trade Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand" href="#" aria-label="TradeTracker home">
+                <span class="brand-mark">TT</span>
+                <span>TradeTracker</span>
+            </a>
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="#platform">Platform</a>
+                <a href="#workflows">Workflows</a>
+                <a href="#signals">Signals</a>
+                <a href="#activity">Activity</a>
+            </nav>
+            <a class="header-action" href="signin.html">Signin</a>
+        </header>
+
+        <main>
+            <section class="hero-section" id="platform">
+                <div class="hero-copy">
+                    <p class="eyebrow">Global trade intelligence cockpit</p>
+                    <h1>Track partners, shipments, and trade risk from one futuristic command center.</h1>
+                    <p class="hero-text">
+                        TradeTracker helps buyers and sellers understand every trade lane, verify business profiles,
+                        and turn shipment movement into customer-centric intelligence.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="primary-button" href="#dashboard">Explore Dashboard</a>
+                        <a class="secondary-button" href="signup.html">Create Business Profile</a>
+                    </div>
+                    <div class="trust-row" aria-label="Platform capabilities">
+                        <span>Verified partners</span>
+                        <span>Route intelligence</span>
+                        <span>Customs risk signals</span>
+                    </div>
+                </div>
+
+                <aside class="dashboard-preview" id="dashboard" aria-label="TradeTracker dashboard preview">
+                    <div class="dashboard-topline">
+                        <div>
+                            <p class="panel-label">Trade pulse</p>
+                            <h2>Asia-Pacific Lane</h2>
+                        </div>
+                        <span class="status-pill">Live</span>
+                    </div>
+                    <div class="route-map">
+                        <span class="node node-origin"></span>
+                        <span class="route-line"></span>
+                        <span class="node node-mid"></span>
+                        <span class="route-line route-line-short"></span>
+                        <span class="node node-destination"></span>
+                    </div>
+                    <div class="metric-grid">
+                        <article class="metric-card">
+                            <span>Active Shipments</span>
+                            <strong data-count="128">0</strong>
+                            <small>+18% this week</small>
+                        </article>
+                        <article class="metric-card">
+                            <span>Verified Partners</span>
+                            <strong data-count="46">0</strong>
+                            <small>9 new matches</small>
+                        </article>
+                        <article class="metric-card warning-card">
+                            <span>Risk Alerts</span>
+                            <strong data-count="7">0</strong>
+                            <small>2 need review</small>
+                        </article>
+                        <article class="metric-card">
+                            <span>Trade Volume</span>
+                            <strong data-count="24">$0M</strong>
+                            <small>Projected month</small>
+                        </article>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="workflow-section" id="workflows">
+                <div class="section-heading">
+                    <p class="eyebrow">Designed for both sides of trade</p>
+                    <h2>One platform, two operating views.</h2>
+                </div>
+                <div class="workflow-grid">
+                    <article class="workflow-card active" data-workflow="buyer">
+                        <span class="card-icon">B</span>
+                        <h3>Buyer Command View</h3>
+                        <p>Discover verified sellers, compare trade lanes, and watch inbound shipment risk before it hits your customer promise.</p>
+                        <ul>
+                            <li>Supplier confidence score</li>
+                            <li>Landed cost snapshots</li>
+                            <li>Delay and customs visibility</li>
+                        </ul>
+                    </article>
+                    <article class="workflow-card" data-workflow="seller">
+                        <span class="card-icon">S</span>
+                        <h3>Seller Growth View</h3>
+                        <p>Position your business profile, qualify buyers, and track outbound performance across priority markets.</p>
+                        <ul>
+                            <li>Buyer match pipeline</li>
+                            <li>Export readiness signals</li>
+                            <li>Route performance history</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="signals-section" id="signals">
+                <div class="signal-panel">
+                    <p class="panel-label">Risk radar</p>
+                    <h2>Intelligence that keeps trade moving.</h2>
+                    <p>
+                        Convert operational noise into clear decisions with alerts for supplier reliability,
+                        port congestion, document gaps, and changing market demand.
+                    </p>
+                </div>
+                <div class="signal-stack">
+                    <article class="signal-item">
+                        <span class="signal-dot emerald"></span>
+                        <div>
+                            <strong>Partner verified</strong>
+                            <p>Business profile cleared identity, product, and destination checks.</p>
+                        </div>
+                    </article>
+                    <article class="signal-item">
+                        <span class="signal-dot amber"></span>
+                        <div>
+                            <strong>Customs document review</strong>
+                            <p>Commercial invoice mismatch detected before the shipment reaches port.</p>
+                        </div>
+                    </article>
+                    <article class="signal-item">
+                        <span class="signal-dot cyan"></span>
+                        <div>
+                            <strong>Route optimized</strong>
+                            <p>Alternative lane lowers projected delay by 22 hours.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="activity-section" id="activity">
+                <div class="section-heading">
+                    <p class="eyebrow">Live operating feed</p>
+                    <h2>Every trade event becomes context.</h2>
+                </div>
+                <div class="activity-feed">
+                    <article>
+                        <span>08:42</span>
+                        <p>Shipment TT-4921 cleared origin inspection in Ho Chi Minh City.</p>
+                    </article>
+                    <article>
+                        <span>09:15</span>
+                        <p>Buyer match score increased for Nordic Home Goods after profile enrichment.</p>
+                    </article>
+                    <article>
+                        <span>10:04</span>
+                        <p>Risk radar flagged elevated congestion at Port Klang for electronics shipments.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

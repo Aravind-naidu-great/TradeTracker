@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | TradeTracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header dashboard-header">
+            <a class="brand" href="dashboard.html" aria-label="TradeTracker dashboard">
+                <span class="brand-mark">TT</span>
+                <span>TradeTracker</span>
+            </a>
+            <nav class="nav-links dashboard-nav" aria-label="Dashboard navigation">
+                <a href="#buyers">Buyers</a>
+                <a href="#sellers">Sellers</a>
+                <a href="#create-requirement">Create Requirement</a>
+                <a href="#post-requirement">Post Requirement</a>
+                <a href="#chat">Chat</a>
+                <a href="#about">About</a>
+            </nav>
+            <div class="user-menu">
+                <button class="user-menu-button" type="button" aria-label="Open user menu" aria-expanded="false">
+                    <span id="userInitial">U</span>
+                </button>
+                <div class="user-dropdown" id="userDropdown">
+                    <p class="user-name" id="dashboardUserName">Customer</p>
+                    <a href="#profile">Profile</a>
+                    <a href="#previous-shipments">Previous Shipments</a>
+                    <a href="#revenue">Revenue</a>
+                    <a href="#analytics">Analytics</a>
+                    <a href="#current-shipments">Current Shipments</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="dashboard-hero">
+                <p class="eyebrow">Signed-in trade cockpit</p>
+                <h1>Manage buying, selling, requirements, chat, and shipment intelligence.</h1>
+                <p class="hero-text">
+                    This dashboard is the first signed-in view. It gives customers one place to explore buyers,
+                    sellers, requirements, conversations, and performance data.
+                </p>
+            </section>
+
+            <section class="dashboard-grid">
+                <article class="dashboard-card" id="buyers">
+                    <span class="card-icon">B</span>
+                    <h3>Buyers</h3>
+                    <p>Discover buyer demand, matching opportunities, and verified customer requests.</p>
+                </article>
+                <article class="dashboard-card" id="sellers">
+                    <span class="card-icon">S</span>
+                    <h3>Sellers</h3>
+                    <p>Explore suppliers, export-ready companies, and trusted business profiles.</p>
+                </article>
+                <article class="dashboard-card" id="create-requirement">
+                    <span class="card-icon">C</span>
+                    <h3>Create Requirement</h3>
+                    <p>Start a structured buying or selling need with route and product details.</p>
+                </article>
+                <article class="dashboard-card" id="post-requirement">
+                    <span class="card-icon">P</span>
+                    <h3>Post Requirement</h3>
+                    <p>Publish a requirement so relevant buyers and sellers can respond.</p>
+                </article>
+                <article class="dashboard-card" id="chat">
+                    <span class="card-icon">M</span>
+                    <h3>Chat</h3>
+                    <p>Keep buyer, seller, and shipment conversations connected to trade activity.</p>
+                </article>
+                <article class="dashboard-card" id="about">
+                    <span class="card-icon">A</span>
+                    <h3>About</h3>
+                    <p>Review how TradeTracker supports global trade operations and customer intelligence.</p>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

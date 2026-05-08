@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | TradeTracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell auth-shell">
+        <header class="site-header">
+            <a class="brand" href="index.html" aria-label="TradeTracker home">
+                <span class="brand-mark">TT</span>
+                <span>TradeTracker</span>
+            </a>
+            <nav class="nav-links" aria-label="Authentication navigation">
+                <a href="index.html#platform">Platform</a>
+                <a href="index.html#workflows">Workflows</a>
+                <a href="index.html#signals">Signals</a>
+            </nav>
+            <a class="header-action" href="index.html">Back Home</a>
+        </header>
+
+        <main class="auth-layout">
+            <section class="auth-copy">
+                <p class="eyebrow">Create your trade identity</p>
+                <h1>Sign in to build your verified business profile.</h1>
+                <p class="hero-text">
+                    Start with your account, then add buyer or seller details so TradeTracker can match partners,
+                    surface shipment intelligence, and personalize your trade cockpit.
+                </p>
+                <div class="auth-benefits">
+                    <article>
+                        <span class="signal-dot emerald"></span>
+                        <div>
+                            <strong>Verified business profile</strong>
+                            <p>Capture company, country, product, and trade purpose.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <span class="signal-dot cyan"></span>
+                        <div>
+                            <strong>Buyer and seller routing</strong>
+                            <p>Choose your role so the platform can shape the right workflow.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <span class="signal-dot amber"></span>
+                        <div>
+                            <strong>Future-ready access</strong>
+                            <p>This static form sets up the screen before real authentication APIs are connected.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="auth-panel" aria-labelledby="signin-title">
+                <p class="panel-label">Secure access</p>
+                <h2 id="signin-title">Welcome back</h2>
+                <form class="auth-form" id="signinForm" action="/api/auth/signin" method="post">
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+
+                    <button class="primary-button auth-submit" type="submit">Sign In</button>
+                </form>
+                <p class="auth-message" id="signinMessage" role="status"></p>
+                <p class="auth-note">
+                    New to TradeTracker? <a href="signup.html">Create a new customer account</a>.
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
