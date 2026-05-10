@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Chat | TradeTracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header dashboard-header">
+            <a class="brand" href="dashboard.html" aria-label="TradeTracker dashboard">
+                <span class="brand-mark">TT</span>
+                <span>TradeTracker</span>
+            </a>
+            <nav class="nav-links dashboard-nav" aria-label="Chat navigation">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="requirements.html">Requirement</a>
+                <a href="sellers.html">Sellers</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="dashboard-hero">
+                <p class="eyebrow">Business messenger</p>
+                <h1>Talk to buyers and sellers in context.</h1>
+                <p class="hero-text">
+                    Use chat to clarify quantity, price, quality, shipment type, documents, and payment before moving
+                    a trade forward.
+                </p>
+            </section>
+
+            <section class="messenger-shell">
+                <aside class="conversation-list" aria-label="Conversations">
+                    <p class="eyebrow">Conversations</p>
+                    <button class="conversation-item active" type="button">Turmeric inquiry</button>
+                    <button class="conversation-item" type="button">Fabric sourcing</button>
+                    <button class="conversation-item" type="button">New business chat</button>
+                </aside>
+
+                <section class="chat-panel">
+                    <div class="chat-header">
+                        <div>
+                            <p class="panel-label">Messenger</p>
+                            <h2>Business conversation</h2>
+                        </div>
+                        <span class="status-pill">Live</span>
+                    </div>
+                    <div class="message-thread" id="messageThread">
+                        <p>Loading messages...</p>
+                    </div>
+                    <form class="chat-compose" id="chatForm">
+                        <div class="form-row">
+                            <label>
+                                From
+                                <input name="senderBusinessName" type="text" placeholder="Your business" required>
+                            </label>
+                            <label>
+                                To
+                                <input name="recipientBusinessName" type="text" placeholder="Recipient business" required>
+                            </label>
+                        </div>
+                        <input name="conversationName" type="text" placeholder="Conversation topic" value="New business chat" required>
+                        <div class="compose-row">
+                            <input name="messageText" type="text" placeholder="Write a message..." required>
+                            <button class="primary-button" type="submit">Send</button>
+                        </div>
+                        <p class="auth-message" id="chatMessage"></p>
+                    </form>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

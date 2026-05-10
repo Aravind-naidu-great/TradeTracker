@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sellers | TradeTracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header dashboard-header">
+            <a class="brand" href="dashboard.html" aria-label="TradeTracker dashboard">
+                <span class="brand-mark">TT</span>
+                <span>TradeTracker</span>
+            </a>
+            <nav class="nav-links dashboard-nav" aria-label="Sellers navigation">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="requirements.html">Requirement</a>
+                <a href="chat.html">Chat</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="dashboard-hero">
+                <p class="eyebrow">Verified supply network</p>
+                <h1>Available sellers and what they supply.</h1>
+                <p class="hero-text">
+                    Browse seller profiles, products, available quantities, shipment modes, payment terms, and
+                    certifications before starting a conversation.
+                </p>
+            </section>
+
+            <form class="market-form csv-import-form" id="sellerForm" enctype="multipart/form-data">
+                <div class="section-heading">
+                    <p class="eyebrow">Seller listing</p>
+                    <h2>Post what your business is selling.</h2>
+                    <p class="hero-text">
+                        Add product details and upload a product picture so buyers can understand your supply quickly.
+                    </p>
+                </div>
+                <div class="form-row">
+                    <label>
+                        Business name
+                        <input name="businessName" type="text" placeholder="Your company" required>
+                    </label>
+                    <label>
+                        Country
+                        <input name="country" type="text" placeholder="India" required>
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label>
+                        Category
+                        <input name="category" type="text" placeholder="Spices" required>
+                    </label>
+                    <label>
+                        Sub category
+                        <input name="subCategory" type="text" placeholder="Turmeric" required>
+                    </label>
+                </div>
+                <label>
+                    Products
+                    <input name="products" type="text" placeholder="Turmeric fingers, powder, cumin" required>
+                </label>
+                <div class="form-row">
+                    <label>
+                        Available quantity
+                        <input name="availableQuantity" type="text" placeholder="40 metric tons monthly" required>
+                    </label>
+                    <label>
+                        Price range
+                        <input name="priceRange" type="text" placeholder="USD 1,850 - 2,050 per MT" required>
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label>
+                        Shipment types
+                        <input name="shipmentTypes" type="text" placeholder="Sea Freight, Air Freight" required>
+                    </label>
+                    <label>
+                        Payment terms
+                        <input name="paymentTerms" type="text" placeholder="LC, 30% advance" required>
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label>
+                        Certifications
+                        <input name="certifications" type="text" placeholder="ISO 22000, FSSAI">
+                    </label>
+                    <label>
+                        Product picture
+                        <input name="productImage" type="file" accept="image/*">
+                    </label>
+                </div>
+                <button class="secondary-button market-submit" type="submit">Post Seller Listing</button>
+                <p class="auth-message" id="sellerMessage"></p>
+            </form>
+
+            <section class="seller-grid" id="sellerGrid">
+                <article class="seller-card loading-card">
+                    <p>Loading sellers...</p>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

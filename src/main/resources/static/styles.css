@@ -75,6 +75,15 @@ a {
     backdrop-filter: blur(18px);
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
 .brand,
 .nav-links,
 .hero-actions,
@@ -109,6 +118,112 @@ a {
 
 .nav-links a:hover {
     color: var(--text);
+}
+
+.header-search {
+    position: relative;
+    display: flex;
+    flex: 1;
+    max-width: 440px;
+    min-width: 250px;
+    border: 1px solid rgba(120, 220, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.055);
+}
+
+.header-search:focus-within {
+    border-color: rgba(56, 217, 255, 0.7);
+    box-shadow: 0 0 0 4px rgba(56, 217, 255, 0.12);
+}
+
+.header-search input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    color: var(--text);
+    background: transparent;
+    font: inherit;
+    outline: 0;
+    padding: 0 14px;
+}
+
+.header-search input::placeholder {
+    color: rgba(145, 167, 189, 0.84);
+}
+
+.header-search button {
+    border: 0;
+    border-radius: 999px;
+    color: #04101b;
+    background: linear-gradient(135deg, var(--cyan), var(--emerald));
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 800;
+    padding: 11px 15px;
+}
+
+.search-results {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    left: 0;
+    z-index: 30;
+    display: none;
+    min-width: min(440px, calc(100vw - 40px));
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(4, 9, 20, 0.96);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18px);
+}
+
+.header-search:focus-within .search-results,
+.header-search:hover .search-results {
+    display: block;
+}
+
+.search-results p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+.search-result-list {
+    display: grid;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.search-result-item {
+    display: grid;
+    gap: 3px;
+    padding: 10px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.search-result-item:hover {
+    background: rgba(56, 217, 255, 0.1);
+}
+
+.search-result-item span {
+    color: var(--emerald);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.search-result-item strong {
+    font-size: 0.94rem;
+}
+
+.search-result-item small {
+    color: var(--muted);
+    line-height: 1.45;
 }
 
 .header-action,
@@ -350,7 +465,8 @@ h3 {
 
 .workflow-section,
 .signals-section,
-.activity-section {
+.activity-section,
+.buyer-requirements-section {
     padding: 48px 0;
 }
 
@@ -659,6 +775,7 @@ h3 {
 }
 
 .dashboard-card {
+    display: block;
     min-height: 220px;
     padding: 26px;
     border: 1px solid var(--line);
@@ -668,9 +785,347 @@ h3 {
     backdrop-filter: blur(20px);
 }
 
+.dashboard-card:hover {
+    border-color: rgba(56, 217, 255, 0.52);
+    background: var(--panel-strong);
+}
+
 .dashboard-card p {
     color: var(--muted);
     line-height: 1.7;
+}
+
+.form-and-feed-layout {
+    display: grid;
+    grid-template-columns: minmax(340px, 0.86fr) minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+    padding-bottom: 56px;
+}
+
+.market-form,
+.seller-card,
+.messenger-shell,
+.conversation-list,
+.chat-panel {
+    border: 1px solid var(--line);
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+}
+
+.market-form {
+    display: grid;
+    gap: 14px;
+    padding: 26px;
+    border-radius: 30px;
+}
+
+.csv-import-form {
+    margin-bottom: 24px;
+}
+
+.market-form label {
+    display: grid;
+    gap: 8px;
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+
+.market-form input,
+.market-form select,
+.market-form textarea,
+.chat-compose input {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid rgba(120, 220, 255, 0.2);
+    border-radius: 16px;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.055);
+    font: inherit;
+    outline: none;
+    padding: 0 14px;
+}
+
+.market-form textarea {
+    min-height: 92px;
+    padding-top: 12px;
+    resize: vertical;
+}
+
+.market-form input:focus,
+.market-form select:focus,
+.market-form textarea:focus,
+.chat-compose input:focus {
+    border-color: rgba(56, 217, 255, 0.7);
+    box-shadow: 0 0 0 4px rgba(56, 217, 255, 0.12);
+}
+
+.market-form option {
+    color: #04101b;
+}
+
+.market-submit {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.buyer-requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.single-column-feed {
+    grid-template-columns: 1fr;
+}
+
+.requirement-card {
+    display: grid;
+    gap: 14px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+}
+
+.requirement-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.requirement-topline span,
+.requirement-topline strong {
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.requirement-topline span {
+    padding: 8px 10px;
+    color: #04101b;
+    background: linear-gradient(135deg, var(--amber), var(--emerald));
+}
+
+.requirement-topline strong {
+    padding: 7px 10px;
+    border: 1px solid rgba(49, 247, 165, 0.35);
+    color: var(--emerald);
+    background: rgba(49, 247, 165, 0.08);
+}
+
+.requirement-card h3 {
+    margin-bottom: 0;
+}
+
+.requirement-card p {
+    margin-bottom: 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.requirement-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+}
+
+.requirement-details div {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.requirement-details dt {
+    margin-bottom: 5px;
+    color: var(--muted);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.requirement-details dd {
+    margin: 0;
+    color: var(--text);
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+.loading-card {
+    grid-column: 1 / -1;
+}
+
+.seller-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding-bottom: 56px;
+}
+
+.seller-card {
+    display: grid;
+    gap: 14px;
+    padding: 24px;
+    border-radius: 28px;
+}
+
+.seller-product-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border: 1px solid rgba(120, 220, 255, 0.16);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.seller-card h3,
+.seller-card p {
+    margin-bottom: 0;
+}
+
+.seller-card p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.seller-chat-link {
+    justify-self: start;
+}
+
+.messenger-shell {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    overflow: hidden;
+    border-radius: 32px;
+}
+
+.conversation-list {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    padding: 20px;
+    border-width: 0 1px 0 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.conversation-item {
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.045);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 800;
+    padding: 13px;
+    text-align: left;
+}
+
+.conversation-item.active,
+.conversation-item:hover {
+    border-color: rgba(56, 217, 255, 0.42);
+    color: var(--text);
+    background: rgba(56, 217, 255, 0.09);
+}
+
+.chat-panel {
+    display: grid;
+    grid-template-rows: auto minmax(380px, 1fr) auto;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-header h2 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
+.message-thread {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    padding: 22px;
+}
+
+.message-bubble {
+    max-width: min(74%, 560px);
+    padding: 13px 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.065);
+}
+
+.message-bubble.outgoing {
+    align-self: flex-end;
+    color: #04101b;
+    background: linear-gradient(135deg, var(--cyan), var(--emerald));
+}
+
+.message-bubble.incoming {
+    align-self: flex-start;
+}
+
+.message-bubble span,
+.message-bubble small {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.message-bubble span {
+    margin-bottom: 6px;
+    color: var(--emerald);
+}
+
+.message-bubble.outgoing span,
+.message-bubble.outgoing small {
+    color: rgba(4, 16, 27, 0.78);
+}
+
+.message-bubble p {
+    margin-bottom: 6px;
+    line-height: 1.45;
+}
+
+.message-bubble small {
+    color: var(--muted);
+}
+
+.chat-compose {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.compose-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+}
+
+.compose-row .primary-button {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
 }
 
 .user-menu {
@@ -721,22 +1176,34 @@ h3 {
     font-weight: 800;
 }
 
-.user-dropdown a {
+.user-dropdown a,
+.logout-button {
     padding: 10px;
+    border: 0;
     border-radius: 12px;
     color: var(--muted);
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
     font-size: 0.92rem;
+    text-align: left;
 }
 
-.user-dropdown a:hover {
+.user-dropdown a:hover,
+.logout-button:hover {
     color: var(--text);
     background: rgba(255, 255, 255, 0.06);
+}
+
+.logout-button {
+    color: var(--danger);
 }
 
 @media (max-width: 900px) {
     .site-header {
         align-items: flex-start;
         border-radius: 28px;
+        flex-wrap: wrap;
     }
 
     .nav-links {
@@ -747,13 +1214,27 @@ h3 {
     .auth-layout,
     .workflow-grid,
     .dashboard-grid,
+    .buyer-requirements-grid,
+    .form-and-feed-layout,
+    .seller-grid,
+    .messenger-shell,
     .signals-section {
         grid-template-columns: 1fr;
+    }
+
+    .conversation-list {
+        border-width: 0 0 1px;
     }
 
     .hero-section,
     .auth-layout {
         padding-top: 58px;
+    }
+
+    .header-search {
+        order: 3;
+        width: 100%;
+        max-width: none;
     }
 }
 
@@ -768,12 +1249,19 @@ h3 {
         flex-direction: column;
     }
 
+    .header-search {
+        min-width: 0;
+    }
+
     h1 {
         font-size: 3.1rem;
     }
 
     .dashboard-preview,
     .dashboard-card,
+    .requirement-card,
+    .seller-card,
+    .market-form,
     .auth-panel,
     .workflow-card,
     .signal-panel {
@@ -782,7 +1270,13 @@ h3 {
 
     .metric-grid,
     .form-row,
+    .requirement-details,
+    .compose-row,
     .activity-feed article {
         grid-template-columns: 1fr;
+    }
+
+    .message-bubble {
+        max-width: 100%;
     }
 }

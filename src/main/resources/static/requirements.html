@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requirements | TradeTracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header dashboard-header">
+            <a class="brand" href="dashboard.html" aria-label="TradeTracker dashboard">
+                <span class="brand-mark">TT</span>
+                <span>TradeTracker</span>
+            </a>
+            <nav class="nav-links dashboard-nav" aria-label="Requirements navigation">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="sellers.html">Sellers</a>
+                <a href="chat.html">Chat</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="dashboard-hero">
+                <p class="eyebrow">Requirement marketplace</p>
+                <h1>Post your need or availability.</h1>
+                <p class="hero-text">
+                    Choose a category and subcategory, then publish quantity, price, payment, and shipment details so
+                    buyers and sellers can respond with the right context.
+                </p>
+            </section>
+
+            <section class="form-and-feed-layout">
+                <form class="market-form" id="requirementForm">
+                    <div class="section-heading">
+                        <p class="eyebrow">New requirement</p>
+                        <h2>Tell the market what you need or can supply.</h2>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Type
+                            <select name="requirementType" required>
+                                <option value="Need">I need this</option>
+                                <option value="Availability">I can supply this</option>
+                            </select>
+                        </label>
+                        <label>
+                            Category
+                            <select id="requirementCategory" name="category" required></select>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Sub category
+                            <select id="requirementSubCategory" name="subCategory" required></select>
+                        </label>
+                        <label>
+                            Product name
+                            <input name="productName" type="text" placeholder="Example: Turmeric" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Business name
+                            <input name="buyerName" type="text" placeholder="Your company name" required>
+                        </label>
+                        <label>
+                            Country
+                            <input name="country" type="text" placeholder="Country" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Quantity
+                            <input name="requiredQuantity" type="text" placeholder="18 metric tons" required>
+                        </label>
+                        <label>
+                            Price
+                            <input name="targetPrice" type="text" placeholder="USD 1,950 per MT" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Payment type
+                            <select name="paymentType" required>
+                                <option>Letter of Credit</option>
+                                <option>Bank Transfer</option>
+                                <option>Escrow</option>
+                                <option>30% advance, 70% against documents</option>
+                                <option>Net 30</option>
+                            </select>
+                        </label>
+                        <label>
+                            Shipment type
+                            <select name="shipmentType" required>
+                                <option>Sea Freight</option>
+                                <option>Air Freight</option>
+                                <option>Reefer Sea Freight</option>
+                                <option>Road Freight</option>
+                                <option>Multimodal</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Delivery port
+                            <input name="deliveryPort" type="text" placeholder="Jebel Ali Port" required>
+                        </label>
+                        <label>
+                            Incoterm
+                            <select name="incoterm" required>
+                                <option>FOB</option>
+                                <option>CIF</option>
+                                <option>CFR</option>
+                                <option>EXW</option>
+                                <option>DAP</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        Quality specs
+                        <textarea name="qualitySpecs" placeholder="Grade, packing, certification, moisture limits..."></textarea>
+                    </label>
+                    <label>
+                        Notes
+                        <textarea name="notes" placeholder="Lead time, inspection needs, preferred documents, urgency..."></textarea>
+                    </label>
+
+                    <button class="primary-button market-submit" type="submit">Post Requirement</button>
+                    <p class="auth-message" id="requirementMessage"></p>
+                </form>
+
+                <section>
+                    <form class="market-form csv-import-form" id="requirementCsvForm">
+                        <div class="section-heading">
+                            <p class="eyebrow">CSV import</p>
+                            <h2>Upload IndiaMART or Alibaba requirement CSV.</h2>
+                            <p class="hero-text">
+                                Headers supported: requirementType, category, subCategory, productName, buyerName,
+                                country, quantity, paymentType, price, deliveryPort, incoterm, shipmentType.
+                            </p>
+                        </div>
+                        <label>
+                            Requirement CSV
+                            <input name="file" type="file" accept=".csv,text/csv" required>
+                        </label>
+                        <button class="secondary-button market-submit" type="submit">Import Requirements CSV</button>
+                        <p class="auth-message" id="requirementCsvMessage"></p>
+                    </form>
+
+                    <div class="section-heading">
+                        <p class="eyebrow">Live posts</p>
+                        <h2>Current requirements and availability.</h2>
+                    </div>
+                    <div class="buyer-requirements-grid single-column-feed" id="requirementFeed">
+                        <article class="requirement-card loading-card">
+                            <p>Loading requirements...</p>
+                        </article>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

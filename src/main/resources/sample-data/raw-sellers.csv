@@ -1,0 +1,4 @@
+businessName,country,category,subCategory,products,quantity,price,shipmentType,paymentType,certifications,responseTime,verified,productImageUrl
+Kerala Spice Collective,India,Spices,Black Pepper,"Black pepper, cardamom, turmeric",35 MT,USD 4200 per MT,Sea Freight,LC,ISO 22000,3 hours,true,
+Gujarat Textile Hub,India,Textiles,Home Linen,"Cotton bedsheets, towels, home linen",25000 pieces,Custom quote,Sea Freight,Bank Transfer,OEKO-TEX,Same day,true,
+Maharashtra Agro Exporters,India,Fresh Produce,Grapes,"Fresh grapes, onions, mangoes",12 MT weekly,USD 1.10 per kg,Reefer Sea Freight,Escrow,APEDA,2 hours,false,

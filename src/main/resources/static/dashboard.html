@@ -16,12 +16,26 @@
                 <span class="brand-mark">TT</span>
                 <span>TradeTracker</span>
             </a>
+            <form class="header-search" id="appSearchForm" role="search">
+                <label class="visually-hidden" for="appSearchInput">Search TradeTracker</label>
+                <input
+                    id="appSearchInput"
+                    type="search"
+                    name="q"
+                    autocomplete="off"
+                    placeholder="Ask: find buyers, shipments, revenue..."
+                    aria-describedby="appSearchHint"
+                >
+                <button type="submit">Search</button>
+                <div class="search-results" id="appSearchResults" aria-live="polite">
+                    <p id="appSearchHint">Try natural language like "show active shipments" or "where is revenue?".</p>
+                </div>
+            </form>
             <nav class="nav-links dashboard-nav" aria-label="Dashboard navigation">
                 <a href="#buyers">Buyers</a>
-                <a href="#sellers">Sellers</a>
-                <a href="#create-requirement">Create Requirement</a>
-                <a href="#post-requirement">Post Requirement</a>
-                <a href="#chat">Chat</a>
+                <a href="sellers.html">Sellers</a>
+                <a href="requirements.html">Requirement</a>
+                <a href="chat.html">Chat</a>
                 <a href="#about">About</a>
             </nav>
             <div class="user-menu">
@@ -35,6 +49,7 @@
                     <a href="#revenue">Revenue</a>
                     <a href="#analytics">Analytics</a>
                     <a href="#current-shipments">Current Shipments</a>
+                    <button class="logout-button" id="logoutButton" type="button">Logout</button>
                 </div>
             </div>
         </header>
@@ -50,36 +65,47 @@
             </section>
 
             <section class="dashboard-grid">
-                <article class="dashboard-card" id="buyers">
+                <a class="dashboard-card" id="buyers" href="requirements.html">
                     <span class="card-icon">B</span>
                     <h3>Buyers</h3>
                     <p>Discover buyer demand, matching opportunities, and verified customer requests.</p>
-                </article>
-                <article class="dashboard-card" id="sellers">
+                </a>
+                <a class="dashboard-card" id="sellers" href="sellers.html">
                     <span class="card-icon">S</span>
                     <h3>Sellers</h3>
                     <p>Explore suppliers, export-ready companies, and trusted business profiles.</p>
-                </article>
-                <article class="dashboard-card" id="create-requirement">
-                    <span class="card-icon">C</span>
-                    <h3>Create Requirement</h3>
-                    <p>Start a structured buying or selling need with route and product details.</p>
-                </article>
-                <article class="dashboard-card" id="post-requirement">
-                    <span class="card-icon">P</span>
-                    <h3>Post Requirement</h3>
-                    <p>Publish a requirement so relevant buyers and sellers can respond.</p>
-                </article>
-                <article class="dashboard-card" id="chat">
+                </a>
+                <a class="dashboard-card" id="requirement" href="requirements.html">
+                    <span class="card-icon">R</span>
+                    <h3>Requirement</h3>
+                    <p>Post your buying need or selling availability with category, quantity, price, and shipment details.</p>
+                </a>
+                <a class="dashboard-card" id="chat" href="chat.html">
                     <span class="card-icon">M</span>
                     <h3>Chat</h3>
                     <p>Keep buyer, seller, and shipment conversations connected to trade activity.</p>
-                </article>
+                </a>
                 <article class="dashboard-card" id="about">
                     <span class="card-icon">A</span>
                     <h3>About</h3>
                     <p>Review how TradeTracker supports global trade operations and customer intelligence.</p>
                 </article>
+            </section>
+
+            <section class="buyer-requirements-section" id="buyer-requirements" aria-labelledby="buyerRequirementsTitle">
+                <div class="section-heading">
+                    <p class="eyebrow">Buyer demand from H2</p>
+                    <h2 id="buyerRequirementsTitle">Posted buyer requirements.</h2>
+                    <p class="hero-text">
+                        Live requirements are loaded from the application database with product, buyer, country,
+                        quantity, payment, date, delivery, and quality details.
+                    </p>
+                </div>
+                <div class="buyer-requirements-grid" id="buyerRequirementsGrid">
+                    <article class="requirement-card loading-card">
+                        <p>Loading buyer requirements...</p>
+                    </article>
+                </div>
             </section>
         </main>
     </div>
